@@ -1,1 +1,41 @@
+drop database Shop
+
+-- Create Database
+Create Database Shop
+
+use Shop -- use shop
+
+--Create Table
+Create Table Kirana_Shop(Product_id int Primary Key,
+                         Product_Name varchar(max),
+						 Quantity	int,
+						 Rate  int,
+						 Purchase_Date date) --Create Table
+
+insert  into Kirana_Shop values(1007,'chocobar',100,10,'2025/10/08',1000)
+                              ,(1006,'krax',25,5,'2025/10/08',125);
+select * from Kirana_Shop
+
+
+alter table Kirana_Shop add Total int  -- Alter Table
+
+update Kirana_Shop set Total=300 where Product_id=1005   --Update Query
+
+select SUM(Total) as Total_amount  -- Sum Query
+From Kirana_Shop 
+
+select  Min(Total) as Maximum_amount  -- Max Query
+From Kirana_Shop 
+
+
+select * from Kirana_Shop as ks      -- Where Clause
+where ks.Quantity>=25 and ks.Rate=5;
+
+
+Select COUNT(Product_id)  as Id_Count
+from Kirana_Shop 
+
+
+
+
 
